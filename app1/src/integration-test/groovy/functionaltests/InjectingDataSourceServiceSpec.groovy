@@ -1,7 +1,6 @@
 package functionaltests
 
 import grails.testing.mixin.integration.Integration
-import spock.lang.PendingFeature
 import spock.lang.Specification
 
 @Integration(applicationClass = Application)

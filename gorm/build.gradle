@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
-        classpath "com.github.erdi:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion"
     }
 }
 
@@ -13,7 +12,6 @@ group "gorm"
 
 apply plugin: "org.grails.grails-web"
 apply plugin: "org.grails.grails-gsp"
-apply plugin: "com.github.erdi.webdriver-binaries"
 
 dependencyManagement {
     imports {

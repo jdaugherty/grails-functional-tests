@@ -6,7 +6,6 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:$assetPipelineVersion"
-        classpath "com.github.erdi:webdriver-binaries-gradle-plugin:$webdriverBinariesVersion"
     }
 }
 
@@ -17,7 +16,6 @@ apply plugin: "war"
 apply plugin: "asset-pipeline"
 apply plugin: "org.grails.grails-web"
 apply plugin: "org.grails.grails-gsp"
-apply plugin: "com.github.erdi.webdriver-binaries"
 
 assets {
     minifyJs = true
