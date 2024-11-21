@@ -3,6 +3,7 @@ package functionaltests
 
 import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
+import org.testcontainers.images.builder.Transferable
 import spock.lang.PendingFeature
 
 /**
@@ -10,35 +11,30 @@ import spock.lang.PendingFeature
 @Integration(applicationClass = Application)
 class UploadControllerSpec extends ContainerGebSpec {
 
-    @PendingFeature(reason='text is null')
+    @PendingFeature(reason='https://github.com/grails/grails-core/issues/13849')
     void "Test file upload"() {
         when:"When go to an upload page"
-            go "/upload/index"
+        go "/upload/index"
 
-            def f = File.createTempFile("uploadtest", "txt")
-            f.deleteOnExit()
-            f.text = "Test upload"
-            def form = $('#myForm')
+        getContainer().copyFileToContainer(Transferable.of("Test upload", 0777), "/test.txt")
+        def form = $('#myForm')
 
-            form.myFile = f.absolutePath
-            $('#input1').click()
+        form.myFile = "/test.txt"
+        $('#input1').click()
 
         then:"The file is uploaded"
-            $('p').text() == 'Test upload'
-
+        $('p').text() == 'Test upload'
     }
 
-    @PendingFeature(reason='text is null')
+    @PendingFeature(reason='https://github.com/grails/grails-core/issues/13849')
     void "Test file upload parameters"() {
         when:"When go to an upload page"
         go "/upload/index"
 
-        def f = File.createTempFile("uploadtest", "txt")
-        f.deleteOnExit()
-        f.text = "Test upload"
+        getContainer().copyFileToContainer(Transferable.of("Test upload", 0777), "/test.txt")
         def form = $('#myForm2')
 
-        form.myFile = f.absolutePath
+        form.myFile = "/test.txt"
         $('#input2').click()
 
         then:"The file is uploaded"
