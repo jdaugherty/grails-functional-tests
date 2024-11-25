@@ -5,6 +5,3 @@
 
 A Suite of functional tests for Grails
 
-To change the Geb driver used to run the functional tests supply the geb.env system property.
-
-    ./gradlew -Dgeb.env=chromeHeadless iT   

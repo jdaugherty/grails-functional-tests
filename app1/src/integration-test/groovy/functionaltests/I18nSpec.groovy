@@ -1,6 +1,6 @@
 package functionaltests
 
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.*
@@ -8,7 +8,7 @@ import org.springframework.context.*
 /**
  */
 @Integration(applicationClass = Application)
-class i18nSpec extends GebSpec {
+class i18nSpec extends ContainerGebSpec {
 
     @Autowired
     MessageSource messageSource

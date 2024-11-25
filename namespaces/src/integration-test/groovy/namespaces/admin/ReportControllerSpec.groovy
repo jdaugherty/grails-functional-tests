@@ -1,10 +1,10 @@
 package namespaces.admin
 
-import geb.spock.GebSpec
+import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 
 @Integration
-class ReportControllerSpec extends GebSpec {
+class ReportControllerSpec extends ContainerGebSpec {
 
     void "test that admin report page renders correctly"() {
         when: "The admin report page is visited"

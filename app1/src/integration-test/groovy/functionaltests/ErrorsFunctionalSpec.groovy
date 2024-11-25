@@ -4,13 +4,13 @@ import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
 
 import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 /**
  */
 @Integration(applicationClass = Application)
 @Rollback
-class ErrorsFunctionalSpec extends GebSpec {
+class ErrorsFunctionalSpec extends ContainerGebSpec {
 
     void "Test exception handling methods for internal controller exceptions"() {
         when:"An action that throws a custom error that is handled by a 500 mapping in UrlMappings.groovy"

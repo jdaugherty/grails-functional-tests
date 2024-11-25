@@ -4,13 +4,13 @@ import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
 
 import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 /**
  */
 @Integration(applicationClass = Application)
 @Rollback
-class ForwardingSpec extends GebSpec {
+class ForwardingSpec extends ContainerGebSpec {
 
     void "Test forward to same controller"() {
         when:"A forward is issued to an action in the same controller"

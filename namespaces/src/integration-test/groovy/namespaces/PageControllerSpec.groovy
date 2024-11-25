@@ -1,10 +1,10 @@
 package namespaces
 
-import geb.spock.GebSpec
+import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 
 @Integration
-class PageControllerSpec extends GebSpec {
+class PageControllerSpec extends ContainerGebSpec {
 
     void "test that the page renders correctly"() {
         when: "The admin page is visited"

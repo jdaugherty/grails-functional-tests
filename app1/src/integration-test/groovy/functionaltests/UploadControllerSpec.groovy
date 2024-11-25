@@ -1,12 +1,12 @@
 package functionaltests
 
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 
 /**
  */
 @Integration(applicationClass = Application)
-class UploadControllerSpec extends GebSpec {
+class UploadControllerSpec extends ContainerGebSpec {
 
 
     void "Test file upload"() {

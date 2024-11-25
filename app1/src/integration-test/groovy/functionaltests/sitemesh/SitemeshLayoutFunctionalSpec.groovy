@@ -3,10 +3,10 @@ package functionaltests.sitemesh
 import functionaltests.Application
 import grails.testing.mixin.integration.Integration
 import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 @Integration(applicationClass = Application)
-class SitemeshLayoutFunctionalSpec extends GebSpec {
+class SitemeshLayoutFunctionalSpec extends ContainerGebSpec {
 
     @Issue('GRAILS-12045')
     void 'test layout by convention'() {

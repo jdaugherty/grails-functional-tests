@@ -2,10 +2,10 @@ package functionaltests
 
 import grails.testing.mixin.integration.Integration
 import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 @Integration(applicationClass = Application)
-class ValidationFunctionalSpec extends GebSpec {
+class ValidationFunctionalSpec extends ContainerGebSpec {
 
     @Issue('GRAILS-12039')
     void "Test validation of an invalid Hibernate entity"() {

@@ -1,6 +1,7 @@
 package functionaltests
 
 import grails.gorm.transactions.Rollback
+import grails.plugin.geb.ContainerGebSpec
 import grails.testing.mixin.integration.Integration
 
 /*
@@ -19,16 +20,12 @@ import grails.testing.mixin.integration.Integration
  * limitations under the License.
  */
 
-
-
-import geb.spock.*
-
 /**
  * @author graemerocher
  */
 @Integration(applicationClass = Application)
 @Rollback
-class AsyncFunctionalSpec extends GebSpec {
+class AsyncFunctionalSpec extends ContainerGebSpec {
 
     void "Test async response rendering works"() {
         when:"When an async response is rendered"

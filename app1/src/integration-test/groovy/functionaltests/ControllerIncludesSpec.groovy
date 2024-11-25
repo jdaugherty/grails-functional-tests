@@ -19,17 +19,14 @@ import grails.testing.mixin.integration.Integration
  * limitations under the License.
  */
 
-
-
-import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 /**
  * @author graemerocher
  */
 @Integration(applicationClass = Application)
 @Rollback
-class ControllerIncludesSpec extends GebSpec {
+class ControllerIncludesSpec extends ContainerGebSpec {
 
     void "Test includes that render a view work when called from a controller action"() {
         when:"When an include that renders a view is used inside a controller action"

@@ -4,13 +4,13 @@ import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
 
 import spock.lang.*
-import geb.spock.*
+import grails.plugin.geb.ContainerGebSpec
 
 /**
  */
 @Integration(applicationClass = Application)
 @Rollback
-class PluginViewsControllerSpec extends GebSpec {
+class PluginViewsControllerSpec extends ContainerGebSpec {
 
     void "Test that when plugin templates are rendered they render correctly"() {
         when:"A view that renders plugin templates is visisted"
