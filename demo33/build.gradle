@@ -1,4 +1,23 @@
+buildscript {
+    repositories {
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsGradlePluginVersion"
+        classpath "org.grails.plugins:views-gradle:$viewsVersion"
+    }
+}
+
+group "org.grails"
+version '0.0.1'
+
+apply plugin:"org.grails.grails-web"
+apply plugin:"org.grails.plugins.views-json"
+apply plugin: "org.grails.grails-gsp"
+
 dependencies {
+    implementation platform("org.grails:grails-bom:$grailsVersion")
+
     implementation "org.springframework.boot:spring-boot-starter-logging"
     implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation "org.grails:grails-core"
@@ -27,8 +46,8 @@ dependencies {
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
     runtimeOnly "com.bertramlabs.plugins:asset-pipeline-grails"
 
-    testImplementation project(':grails-web-testing-support')
-    testImplementation project(':grails-gorm-testing-support')
+    testImplementation 'org.grails:grails-web-testing-support'
+    testImplementation 'org.grails:grails-gorm-testing-support'
 }
 
 bootRun {
